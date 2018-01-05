@@ -1,3 +1,5 @@
+A browser utility for working with cookies, localStorage and sessionStorage.
+
 ## Getting started
 
 `npm install browser-util`
