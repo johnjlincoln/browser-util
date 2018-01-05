@@ -19,14 +19,14 @@ export default class StorageUtil {
 
   remove(isLocal, key) {
     if (this.hasWindowAccess) {
-      isLocal ? window.localStorage.removeItem(key, JSON.stringify(value)) : window.sessionStorage.removeItem(key, JSON.stringify(value));
+      isLocal ? window.localStorage.removeItem(key) : window.sessionStorage.removeItem(key);
     }
   }
 
   get(isLocal, key) {
     let item = {};
     if (this.hasWindowAccess) {
-      item = isLocal ? window.localStorage.getItem(key, JSON.stringify(value)) : window.sessionStorage.getItem(key, JSON.stringify(value));
+      item = isLocal ? window.localStorage.getItem(key, JSON.parse(value)) : window.sessionStorage.getItem(key, JSON.parse(value));
     }
     return item;
   }
