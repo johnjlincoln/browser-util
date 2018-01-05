@@ -1,14 +1,23 @@
 {
   "name": "browser-util",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A browser utility for working with cookies, localStorage and sessionStorage.",
   "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "babel src --presets babel-preset-es2015 --out-dir dist",
     "lint": "eslint src",
     "prepublish": "npm run build",
     "test": "jest"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thesuperhomie/browser-util"
+  },
+  "bugs": "https://github.com/thesuperhomie/browser-util/issues",
+  "homepage": "https://github.com/thesuperhomie/browser-util",
   "keywords": [
     "javascript",
     "storage",
