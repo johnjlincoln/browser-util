@@ -1,7 +1,5 @@
 export default class StorageUtil {
-  constructor() {
-    this.localStorage = window && window.localStorage ? window.localStorage : {};
-    this.sessionStorage = window && window.sessionStorage ? window.sessionStorage : {};
+  constructor(window) {
     this.hasWindowAccess = window && window.localStorage && window.sessionStorage;
   }
 
@@ -31,7 +29,7 @@ export default class StorageUtil {
     return item;
   }
   
-  getAll(isLocal) {
+  getStorage(isLocal) {
     let storage = {};
     const store = isLocal && this.hasWindowAccess ? Object.keys(window.localStorage) : Object.keys(window.sessionStorage);
     for (const key in store) {

@@ -1,8 +1,8 @@
 const cookie = require('cookie');
-
+ 
 export default class CookieUtil {
-  constructor() {
-    this.cookies = document && document.cookie ? this.getCookies() : {};
+  constructor(document) {
+    this.cookies = document ? this.parseCookies(document) : {};
   }
 
   clear() {
@@ -36,18 +36,29 @@ export default class CookieUtil {
   }
 
   get(key) {
-    try {
-      return JSON.parse(this.cookies[key]);
-    } catch (e) {
-      // Whoops!
+    let item = this.cookies[key];
+    if (item) {
+      try {
+        item = JSON.parse(item);
+      } catch (e) {
+        console.log('Error parsing cookie.');
+      }
     }
+    return item;
   }
 
   getCookies() {
+    return this.cookies;
+  }
+
+  parseCookies(document) {
     const pairs = document.cookie.split(";");
     const cookies = {};
     for (var i = 0; i < pairs.length; i++) {
       const pair = pairs[i].split("=");
+      if (pair.length === 1) {
+        continue;
+      }
       cookies[(pair[0] + '').trim()] = unescape(pair[1]);
     }
     return cookies;

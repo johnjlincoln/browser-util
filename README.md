@@ -6,6 +6,9 @@ A browser utility for working with cookies, localStorage and sessionStorage.
 
 ## API - CookieUtil
 
+### `constructor(document)`
+ - document (string): current document environment
+
 ### `get(key)`
 Obtain a cookie value
  - key (string): cookie key
@@ -40,12 +43,15 @@ const favoriteCookie = CookieUtil.get('favoriteCookie'); // Oatmeal
 
 ## API - StorageUtil
 
+### `constructor(window)`
+ - window (string): current window environment
+
 ### `get(isLocal, key)`
 Obtain a storage value
  - isLocal (boolean): denotes localStorage operation
  - key (string): storage key
 
-### `getAll(isLocal)`
+### `getStorage(isLocal)`
 Get all current storage
 - isLocal (boolean): denotes localStorage operation
 
