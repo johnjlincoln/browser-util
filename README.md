@@ -1,13 +1,8 @@
-<h6>
-  A utility for working with cookies, localStorage and sessionStorage.
-</h6>
-
 ## Getting started
 
 `npm install browser-util`
 
-<h6>API</h6>
-## CookieUtil
+## API - CookieUtil
 
 ### `get(key)`
 Obtain a cookie value
@@ -41,7 +36,7 @@ CookieUtil.set('favoriteCookie', 'Oatmeal');
 const favoriteCookie = CookieUtil.get('favoriteCookie'); // Oatmeal
 ```
 
-## StorageUtil
+## API - StorageUtil
 
 ### `get(isLocal, key)`
 Obtain a storage value
