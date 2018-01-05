@@ -1,8 +1,8 @@
-import cookie from 'cookie';
+const cookie = require('cookie');
 
 export default class CookieUtil {
   constructor() {
-    this.cookies = this.getCookies();
+    this.cookies = document && document.cookie ? this.getCookies() : {};
   }
 
   clear() {
