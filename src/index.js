@@ -1,5 +1,5 @@
-import CookieUtil from './cookieUtil';
-import StorageUtil from './storageUtil';
+import CookieUtil from './utils/cookieUtil';
+import StorageUtil from './utils/storageUtil';
 
 module.exports = {
   CookieUtil,
