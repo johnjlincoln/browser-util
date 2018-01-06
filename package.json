@@ -1,6 +1,6 @@
 {
   "name": "browser-util",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "description": "A browser utility for working with cookies, localStorage and sessionStorage.",
   "main": "./dist/index.js",
   "files": [
