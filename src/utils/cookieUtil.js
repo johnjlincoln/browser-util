@@ -18,9 +18,7 @@ export default class CookieUtil {
       value = JSON.stringify(value);
     }
     
-    if (document && document.cookie) {
-      document.cookie = cookie.serialize(key, value, options);
-    } 
+    this.cookies[key] = cookie.serialize(key, value, options); 
   }
 
   remove(key) {
@@ -29,8 +27,8 @@ export default class CookieUtil {
       maxAge: 0
     };
 
-    if (this.cookies[key] && document && document.cookie) {
-      delete this.cookies[key]
+    if (this.cookies[key]) {
+      delete this.cookies[key];
       document.cookie = cookie.serialize(key, '', expire);
     }
   }
