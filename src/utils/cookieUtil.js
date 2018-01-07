@@ -18,7 +18,11 @@ export default class CookieUtil {
       value = JSON.stringify(value);
     }
     
-    this.cookies[key] = cookie.serialize(key, value, options); 
+    this.cookies[key] = value;
+
+    if (document) {
+      document.cookie = cookie.serialize(key, value, options); 
+    }
   }
 
   remove(key) {
@@ -29,7 +33,10 @@ export default class CookieUtil {
 
     if (this.cookies[key]) {
       delete this.cookies[key];
-      document.cookie = cookie.serialize(key, '', expire);
+
+      if (document) {
+        document.cookie = cookie.serialize(key, '', expire);
+      }
     }
   }
 

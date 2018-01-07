@@ -1,5 +1,6 @@
 A browser utility for working with cookies, localStorage and sessionStorage.
 
+[Github](https://github.com/thesuperhomie/browser-util)
 [NPM](https://www.npmjs.com/package/browser-util)
 
 ## Getting started
@@ -36,7 +37,7 @@ Clear all current cookies
 ```js
 import { CookieUtil } from 'browser-util';
 
-const CookieUtil = new CookieUtil();
+const CookieUtil = new CookieUtil(document);
 
 CookieUtil.set('favoriteCookie', 'Oatmeal');
 
@@ -77,10 +78,31 @@ Clear all current storage
 ```js
 import { StorageUtil } from 'browser-util';
 
-const StorageUtil = new StorageUtil();
+const StorageUtil = new StorageUtil(window);
 
 StorageUtil.set(true, 'isValidUser', 'yup');
 
 const isValidUser = StorageUtil.get(true, 'isValidUser'); // yup
+```
+
+## Example With React
+```js
+import React, { Component } from 'react';
+import { CookieUtil } from 'browser-util';
+
+class ExampleComponent extends Component {
+  componentWillMount() {
+    const cookieUtil = new CookieUtil(document);
+    const cookieKey = // cookie key
+    const dataToStore = // some data fetched in parent component etc.
+    cookieUtil.set(cookieKey, dataToStore);
+  }
+  
+  render() {
+    return (
+      <div>Some Mark-Up.</div>
+    );
+  }
+}
 ```
 

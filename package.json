@@ -21,7 +21,9 @@
   "keywords": [
     "javascript",
     "storage",
-    "cookies"
+    "cookies",
+    "react",
+    "browser"
   ],
   "author": "Claudio Herrera",
   "license": "MIT",
