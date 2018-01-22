@@ -5,7 +5,7 @@ export default class CookieUtil {
     this.cookies = document ? this.parseCookies(document) : {};
   }
 
-  clear() {
+  clear = () => {
     const cookies = Object.keys(this.cookies);
 
     if (cookies.length > 0) {
@@ -13,7 +13,7 @@ export default class CookieUtil {
     }
   }
 
-  set(key, value, options = {}) {
+  set = (key, value, options = {}) => {
     if (typeof value === 'object') {
       value = JSON.stringify(value);
     }
@@ -25,7 +25,7 @@ export default class CookieUtil {
     }
   }
 
-  remove(key) {
+  remove = (key) => {
     const expire = {
       expires: new Date(1970, 1, 1, 0, 0, 1),
       maxAge: 0
@@ -40,7 +40,7 @@ export default class CookieUtil {
     }
   }
 
-  get(key) {
+  get = (key) => {
     let item = this.cookies[key];
     if (item) {
       try {
@@ -52,11 +52,11 @@ export default class CookieUtil {
     return item;
   }
 
-  getCookies() {
+  getCookies = () => {
     return this.cookies;
   }
 
-  parseCookies(document) {
+  parseCookies = (document) => {
     const pairs = document.cookie.split(";");
     const cookies = {};
     for (var i = 0; i < pairs.length; i++) {

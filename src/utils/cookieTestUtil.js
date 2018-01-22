@@ -4,7 +4,7 @@ export default class CookieTestUtil {
     this.document = this.prepareDocument();
   }
 
-  prepareDocument() {
+  prepareDocument = () => {
     const document = {};
     const cookieValue1 = 'GA1.2.1562508967.1514991197;';
     const cookieKey1 = '_ga';
@@ -23,7 +23,7 @@ export default class CookieTestUtil {
     return document;
   }
 
-  prepareCookieArray(cookieValues) {
+  prepareCookieArray = (cookieValues) => {
     const {
       cookieKey1,
       cookieValue1,
